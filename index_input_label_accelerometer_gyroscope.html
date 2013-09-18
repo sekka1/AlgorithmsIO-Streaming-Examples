@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">body{font-family:sans-serif}.main{border:1px solid #000;box-shadow:10px 10px 5px #888;border-radius:12px;padding:20px;background-color:#ddd;margin:25px;width:450px;margin-left:auto;margin-right:auto}.logo{margin-left:auto;margin-right:auto;display:block;padding:15px}.container{-webkit-perspective:300;perspective:300}</style>
+</head>
+<body bgcolor="#000000"><noscript><meta HTTP-EQUIV="refresh" content="0;url='http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html?ModPagespeed=noscript'" /><style><!--table,div,span,font,p{display:none} --></style><div style="display:block">Please click <a href="http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html?ModPagespeed=noscript">here</a> if you are not redirected within a few seconds.</div></noscript>
+<div id="algorithms_io_result">xxxxxxxxx</div>
+<div id="event_save_output"></div>
+<div id="query_get_data_by_range"></div>
+<div id="statistic_eps_stat_device"></div>
+<div id="statistic_get_rolling_avg_and_std"></div>
+<div class="main">
+	<h2>Label The Action</h2>
+		<input type="text" id="input_label"/>
+    <h2>Device Orientation</h2>
+    <table>
+        <tr><td>Unique Device ID</td><td id="doDeviceID"></td></td></tr>
+        <tr><td>Device Information:</td><td id="doDeviceInfo"></td></td></tr>
+        <tr>
+            <td>Event Supported</td>
+            <td id="doEvent"></td>
+        </tr>
+        <tr>
+            <td>Tilt Left/Right [gamma]</td>
+            <td id="doTiltLR"></td>
+        </tr>
+        <tr>
+            <td>Tilt Front/Back [beta]</td>
+            <td id="doTiltFB"></td>
+        </tr>
+        <tr>
+            <td>Direction [alpha]</td>
+            <td id="doDirection"></td>
+        </tr>
+        <tr><td>Latitude</td>
+            <td id="doLat"></td>
+        </tr>
+        <tr><td>Longitude</td><td id="doLong"></td></tr>
+        <tr><td>GeoAccuracy</td><td id="doGeoAccuracy"></td></tr>
+        <tr><td>Altitude</td><td id="doAlt"></td></tr>
+        <tr><td>AltitudeAccuracy</td><td id="doAltAccuracy"></td></tr>
+        <tr><td>Heading</td><td id="doHeading"></td></tr>
+        <tr><td>Speed</td><td id="doSpeed"></td></tr>
+        <tr><td>GeoTimestamp</td><td id="doGeoTimestamp"></td></tr>
+        <tr><td>SocketServerResponse</td><td id="socketResponse">xxxxxxxx</td></tr>
+
+    </table>
+    <h2>Device Motion</h2>
+    <table>
+        <tr>
+            <td>Event Supported</td>
+            <td id="dmEvent"></td>
+        </tr>
+        <tr>
+            <td>acceleration</td>
+            <td id="moAccel"></td>
+        </tr>
+        <tr>
+            <td>accelerationIncludingGravity</td>
+            <td id="moAccelGrav"></td>
+        </tr>
+        <tr>
+            <td>rotationRate</td>
+            <td id="moRotation"></td>
+        </tr>
+        <tr>
+            <td>interval</td>
+            <td id="moInterval"></td>
+        </tr>
+    </table>
+</div>
+<div class="container" style="-webkit-perspective: 300; perspective: 300;">
+    <img src="http://www.algorithms.io//wp-content/uploads/2013/05/Algorithms-dark-Bkgd.png" id="imgLogo" class="logo" width="400" height="110">
+</div>
+
+<script src="http://ws.algorithms.io:8082/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script type="text/javascript">
+    var count=0;
+    var socket;
+    var alpha, beta, gamma;
+    var accelx, accely, accelz;
+//    init();
+//    function init(){
+
+        document.getElementById("doDeviceInfo").innerHTML=navigator.userAgent + navigator.platform;
+        if(window.DeviceOrientationEvent){
+            document.getElementById("doEvent").innerHTML="DeviceOrientation";
+            window.addEventListener('deviceorientation',function(eventData){
+                var tiltLR=eventData.gamma;
+                var tiltFB=eventData.beta;
+                if(eventData.webkitCompassHeading) {
+                    document.getElementById("doHeading").innerHTML=eventData.webkitCompassHeading + window.orientation;
+                }
+                var dir=eventData.alpha
+                deviceOrientationHandler(tiltLR,tiltFB,dir);
+            },false);
+        } else {
+            document.getElementById("doEvent").innerHTML="Not supported on your device or browser.  Sorry."
+        }
+
+        if ((window.DeviceMotionEvent) || ('listenForDeviceMovement' in window)) {
+            window.addEventListener('devicemotion', deviceMotionHandler, false);
+        }
+        else {
+            document.getElementById("dmEvent").innerHTML = "Not supported on your device or browser.  Sorry."
+        }
+
+        getLocation();
+
+        socket = io.connect('http://ws.algorithms.io:8082');
+        socket.on('news', function (data) {
+            console.log(data);
+//            document.getElementById("socketResponse").innerHTML=data;
+            //socket.emit('my other event', { my: 'data' });
+        });
+        socket.on('algorithms_io_api', function(data) {
+//            $('#algorithms_io_result').text('Random Forest Result: ' + data.data + "........");
+            document.getElementById("socketResponse").innerHTML(data.data + ".......");
+        });
+        window.setInterval(function(){
+        
+        	//alert( $('#input_label').val() );
+        	
+        	/*
+            socket.emit('event_save', {
+                'authToken': '02cfc86d9992e822510318adebccb4d3',
+                'data': '{"Accelerometer.X":' + accelx + ',"Accelerometer.Y":' + accely + ',"Accelerometer.Z":' + accelz +
+                        ',"Gyroscope.X":' + alpha.toFixed(1) + ',"Gyroscope.Y":' + beta.toFixed(1) + ',"Gyroscope.Z":' + gamma.toFixed(1) + '}', //'{"Accelerometer.X":-5.6,"Accelerometer.Y":-2.5,"Accelerometer.Z":3.7,"Gyroscope.X":-84.2,"Gyroscope.Y":-132.2,"Gyroscope.Z":-80}',
+                'device_id': 'android_1',
+                'label': $('#input_label').val()
+            });
+            */
+            socket.emit('event_save_accelerometer_gyroscope', {'authToken': '02cfc86d9992e822510318adebccb4d3', 
+      								'accelerometer_x': accelx,
+      								'accelerometer_y': accely,
+      								'accelerometer_z': accelz,
+      								'gyroscope_x': alpha.toFixed(1),
+      								'gyroscope_y': beta.toFixed(1),
+      								'gyroscope_z': gamma.toFixed(1),
+      							 'device_id': 'iphone_1',
+      							 'label': $('#input_label').val()
+      							});	
+        }, 1000);
+//    }
+
+    function deviceOrientationHandler(tiltLR,tiltFB,dir){
+
+        document.getElementById("doTiltLR").innerHTML=Math.round(tiltLR);
+        document.getElementById("doTiltFB").innerHTML=Math.round(tiltFB);
+        document.getElementById("doDirection").innerHTML=Math.round(dir);
+
+        alpha = dir;
+        beta = tiltLR;
+        gamma = tiltFB;
+
+        var logo=document.getElementById("imgLogo");
+        logo.style.webkitTransform="rotate("+tiltLR+"deg) rotate3d(1,0,0, "+(tiltFB*-1)+"deg)";
+        logo.style.MozTransform="rotate("+tiltLR+"deg)";
+        logo.style.transform="rotate("+tiltLR+"deg) rotate3d(1,0,0, "+(tiltFB*-1)+"deg)";
+
+//        socket.emit('algorithm_random_forest', {	'algorithmPath': '/jobs/swagger/54',
+//            'authToken': '02cfc86d9992e822510318adebccb4d3',
+//            'method': 'sync',
+//            'outputType': 'json',
+//            'train': '3843',
+//            'test': '{"Gyroscope.X":' + tiltLR.toFixed(1) + ',"Gyroscope.Y":' + tiltFB.toFixed(1) + ',"Gyroscope.Z":' + dir.toFixed(1) + '}',
+//            'dependentVariable': 'action'
+
+		/*
+        document.getElementById("socketResponse").text(".......");
+        socket.emit('algorithm_random_forest', {	'algorithmPath': '/jobs/swagger/54',
+            'authToken': '02cfc86d9992e822510318adebccb4d3',
+            'method': 'sync',
+            'outputType': 'json',
+            'train': '3843',
+            'test': '{"Accelerometer.X":-5.6,"Accelerometer.Y":-2.5,"Accelerometer.Z":3.7,"Gyroscope.X":-84.2,"Gyroscope.Y":-132.2,"Gyroscope.Z":-80}',
+            'dependentVariable': 'action'
+        });
+        */
+		//alert('goooo');
+
+
+//        socket.on('algorithms_io_api', function (data) {
+////            $('#algorithms_io_result').text('Random Forest Result: ' + data.data);
+//            document.getElementById("socketResponse").text(data.data);
+//        });
+//        document.getElementById("doLat").innerHTML = "Sent message at " + (new Date()).getTime();
+    }
+
+    function deviceMotionHandler(eventData) {
+        var info, xyz = "[X, Y, Z]";
+
+        // Grab the acceleration from the results
+        var acceleration = eventData.acceleration;
+        info = xyz.replace("X", acceleration.x);
+        info = info.replace("Y", acceleration.y);
+        info = info.replace("Z", acceleration.z);
+        document.getElementById("moAccel").innerHTML = info;
+
+        // Grab the acceleration including gravity from the results
+        acceleration = eventData.accelerationIncludingGravity;
+        info = xyz.replace("X", acceleration.x);
+        info = info.replace("Y", acceleration.y);
+        info = info.replace("Z", acceleration.z);
+        document.getElementById("moAccelGrav").innerHTML = info;
+
+        // Grab the rotation rate from the results
+        var rotation = eventData.rotationRate;
+        info = xyz.replace("X", rotation.alpha);
+        info = info.replace("Y", rotation.beta);
+        info = info.replace("Z", rotation.gamma);
+        document.getElementById("moRotation").innerHTML = info;
+
+        // // Grab the refresh interval from the results
+        info = eventData.interval;
+        document.getElementById("moInterval").innerHTML = info;
+
+        accelx = acceleration.x;
+        accely = acceleration.y;
+        accelz = acceleration.z;
+    }
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+        } else{
+            console.log("Geolocation is not supported by this browser.");}
+    }
+
+    function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                console.log("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                console.log("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                console.log("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                console.log("An unknown error occurred.");
+                break;
+        }
+    }
+
+    function showPosition(position) {
+        document.getElementById("doLat").innerHTML=Math.round(position.coords.latitude);
+        document.getElementById("doLong").innerHTML=Math.round(position.coords.longitude);
+        document.getElementById("doGeoAccuracy").innerHTML=Math.round(position.coords.accuracy);
+        document.getElementById("doAlt").innerHTML=Math.round(position.coords.altitude);
+        document.getElementById("doAltAccuracy").innerHTML=Math.round(position.coords.altitudeAccuracy);
+        document.getElementById("doHeading").innerHTML=position.coords.heading;
+        document.getElementById("doSpeed").innerHTML=position.coords.speed;
+        document.getElementById("doGeoTimestamp").innerHTML=new Date(position.timestamp);
+
+    }
+
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+    };
+
+    function guid() {
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4();
+    }
+
+
+    var uuid = guid();
+    document.getElementById("doDeviceID").innerHTML=uuid;
+    console.log(uuid);
+
+
+
+
+</script>
+</body>
+</html>
