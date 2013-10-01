@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>SimpliQ - Flat & Responsive Bootstrap Admin Template</title>
+	<meta name="description" content="SimpliQ - Flat & Responsive Bootstrap Admin Template.">
+	<meta name="author" content="Łukasz Holeczek">
+	<meta name="keyword" content="SimpliQ, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/style.min.css" rel="stylesheet">
+	<link href="assets/css/retina.min.css" rel="stylesheet">
+	<!-- end: CSS -->
+	
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<script src="assets/css/ie6-8.css"></script>
+		
+	<![endif]-->
+	
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="http://localhost:8888/bootstrap/simpliq2/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="http://localhost:8888/bootstrap/simpliq2/ico/favicon.png">
+	<!-- end: Favicon and Touch Icons -->	
+		
+</head>
+
+<body>
+		<!-- start: Header -->
+	<header class="navbar">
+		<div class="container">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".sidebar-nav.nav-collapse">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			</button>
+			<a id="main-menu-toggle" class="hidden-xs open"><i class="icon-reorder"></i></a>		
+				<a class="navbar-brand col-lg-2 col-sm-1 col-xs-12" href="index.html"><span>SimpliQ</span></a>
+			<!-- start: Header Menu -->
+			<div class="nav-no-collapse header-nav">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="icons-glyphicons-pro.html#">
+							<i class="icon-warning-sign"></i>
+						</a>
+						<ul class="dropdown-menu notifications">
+							<li class="dropdown-menu-title">
+								<span>You have 11 notifications</span>
+							</li>	
+                        	<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon blue"><i class="icon-user"></i></span>
+									<span class="message">New user registration</span>
+									<span class="time">1 min</span> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon green"><i class="icon-comment-alt"></i></span>
+									<span class="message">New comment</span>
+									<span class="time">7 min</span> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon green"><i class="icon-comment-alt"></i></span>
+									<span class="message">New comment</span>
+									<span class="time">8 min</span> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon green"><i class="icon-comment-alt"></i></span>
+									<span class="message">New comment</span>
+									<span class="time">16 min</span> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon blue"><i class="icon-user"></i></span>
+									<span class="message">New user registration</span>
+									<span class="time">36 min</span> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon yellow"><i class="icon-shopping-cart"></i></span>
+									<span class="message">2 items sold</span>
+									<span class="time">1 hour</span> 
+                                </a>
+                            </li>
+							<li class="warning">
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon red"><i class="icon-user"></i></span>
+									<span class="message">User deleted account</span>
+									<span class="time">2 hour</span> 
+                                </a>
+                            </li>
+							<li class="warning">
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon red"><i class="icon-shopping-cart"></i></span>
+									<span class="message">Transaction was canceled</span>
+									<span class="time">6 hour</span> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon green"><i class="icon-comment-alt"></i></span>
+									<span class="message">New comment</span>
+									<span class="time">yesterday</span> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="icon blue"><i class="icon-user"></i></span>
+									<span class="message">New user registration</span>
+									<span class="time">yesterday</span> 
+                                </a>
+                            </li>
+                            <li class="dropdown-menu-sub-footer">
+                        		<a>View all notifications</a>
+							</li>	
+						</ul>
+					</li>
+					<!-- start: Notifications Dropdown -->
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="icons-glyphicons-pro.html#">
+							<i class="icon-tasks"></i>
+						</a>
+						<ul class="dropdown-menu tasks">
+							<li>
+								<span class="dropdown-menu-title">You have 17 tasks in progress</span>
+                        	</li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="header">
+										<span class="title">iOS Development</span>
+										<span class="percent"></span>
+									</span>
+                                    <div class="taskProgress progressSlim progressBlue">80</div> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="header">
+										<span class="title">Android Development</span>
+										<span class="percent"></span>
+									</span>
+                                    <div class="taskProgress progressSlim progressYellow">47</div> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="header">
+										<span class="title">Django Project For Google</span>
+										<span class="percent"></span>
+									</span>
+                                    <div class="taskProgress progressSlim progressRed">32</div> 
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="header">
+										<span class="title">SEO for new sites</span>
+										<span class="percent"></span>
+									</span>
+                                    <div class="taskProgress progressSlim progressGreen">63</div> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="header">
+										<span class="title">New blog posts</span>
+										<span class="percent"></span>
+									</span>
+                                    <div class="taskProgress progressSlim progressPink">80</div> 
+                                </a>
+                            </li>
+							<li>
+                        		<a class="dropdown-menu-sub-footer">View all tasks</a>
+							</li>	
+						</ul>
+					</li>
+					<!-- end: Notifications Dropdown -->
+					<!-- start: Message Dropdown -->
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="icons-glyphicons-pro.html#">
+							<i class="icon-envelope"></i>
+						</a>
+						<ul class="dropdown-menu messages">
+							<li>
+								<span class="dropdown-menu-title">You have 9 messages</span>
+							</li>	
+                        	<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="avatar"><img src="assets/img/avatar.jpg" alt="Avatar"></span>
+									<span class="header">
+										<span class="from">
+									    	Łukasz Holeczek
+									     </span>
+										<span class="time">
+									    	6 min
+									    </span>
+									</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                    </span>  
+                                </a>
+                            </li>
+                            <li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="avatar"><img src="assets/img/avatar2.jpg" alt="Avatar"></span>
+									<span class="header">
+										<span class="from">
+									    	Megan Abott
+									     </span>
+										<span class="time">
+									    	56 min
+									    </span>
+									</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                    </span>  
+                                </a>
+                            </li>
+                            <li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="avatar"><img src="assets/img/avatar3.jpg" alt="Avatar"></span>
+									<span class="header">
+										<span class="from">
+									    	Kate Ross
+									     </span>
+										<span class="time">
+									    	3 hours
+									    </span>
+									</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                    </span>  
+                                </a>
+                            </li>
+							<li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="avatar"><img src="assets/img/avatar4.jpg" alt="Avatar"></span>
+									<span class="header">
+										<span class="from">
+									    	Julie Blank
+									     </span>
+										<span class="time">
+									    	yesterday
+									    </span>
+									</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                    </span>  
+                                </a>
+                            </li>
+                            <li>
+                                <a href="icons-glyphicons-pro.html#">
+									<span class="avatar"><img src="assets/img/avatar5.jpg" alt="Avatar"></span>
+									<span class="header">
+										<span class="from">
+									    	Jane Sanders
+									     </span>
+										<span class="time">
+									    	Jul 25, 2012
+									    </span>
+									</span>
+                                    <span class="message">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                                    </span>  
+                                </a>
+                            </li>
+							<li>
+                        		<a class="dropdown-menu-sub-footer">View all messages</a>
+							</li>	
+						</ul>
+					</li>
+					<!-- end: Message Dropdown -->
+					<li>
+						<a class="btn" href="icons-glyphicons-pro.html#">
+							<i class="icon-wrench"></i>
+						</a>
+					</li>
+					<!-- start: User Dropdown -->
+					<li class="dropdown">
+						<a class="btn account dropdown-toggle" data-toggle="dropdown" href="icons-glyphicons-pro.html#">
+							<div class="avatar"><img src="assets/img/avatar.jpg" alt="Avatar"></div>
+							<div class="user">
+								<span class="hello">Welcome!</span>
+								<span class="name">Łukasz Holeczek</span>
+							</div>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-menu-title">
+								
+							</li>
+							<li><a href="icons-glyphicons-pro.html#"><i class="icon-user"></i> Profile</a></li>
+							<li><a href="icons-glyphicons-pro.html#"><i class="icon-cog"></i> Settings</a></li>
+							<li><a href="icons-glyphicons-pro.html#"><i class="icon-envelope"></i> Messages</a></li>
+							<li><a href="login.html"><i class="icon-off"></i> Logout</a></li>
+						</ul>
+					</li>
+					<!-- end: User Dropdown -->
+				</ul>
+			</div>
+			<!-- end: Header Menu -->
+			
+		</div>	
+	</header>
+	<!-- end: Header -->
+	
+		<div class="container">
+		<div class="row">
+				
+			<!-- start: Main Menu -->
+			<div id="sidebar-left" class="col-lg-2 col-sm-1">
+				
+				<input type="text" class="search hidden-sm" placeholder="..." />
+				
+				<div class="nav-collapse sidebar-nav collapse navbar-collapse bs-navbar-collapse">
+					<ul class="nav nav-tabs nav-stacked main-menu">
+						<li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-sm"> Dashboard</span></a></li>	
+						<li>
+							<a class="dropmenu" href="icons-glyphicons-pro.html#"><i class="icon-eye-open"></i><span class="hidden-sm"> UI Features</span> <span class="label">3</span></a>
+							<ul>
+								<li><a class="submenu" href="ui-sliders-progress.html"><i class="icon-eye-open"></i><span class="hidden-sm"> Sliders & Progress</span></a></li>
+								<li><a class="submenu" href="ui-nestable-list.html"><i class="icon-eye-open"></i><span class="hidden-sm"> Nestable Lists</span></a></li>
+								<li><a class="submenu" href="ui-elements.html"><i class="icon-eye-open"></i><span class="hidden-sm"> Elements</span></a></li>
+							</ul>
+							</li>
+						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-sm"> Widgets</span></a></li>
+						<li>
+							<a class="dropmenu" href="icons-glyphicons-pro.html#"><i class="icon-folder-close-alt"></i><span class="hidden-sm"> Example Pages</span> <span class="label">3</span></a>
+							<ul>
+								<li><a class="submenu" href="page-infrastructure.html"><i class="icon-hdd"></i><span class="hidden-sm"> Infrastructure</span></a></li>
+								<li><a class="submenu" href="page-inbox.html"><i class="icon-envelope"></i><span class="hidden-sm"> Inbox</span></a></li>
+								<li><a class="submenu" href="page-todo.html"><i class="icon-tasks"></i><span class="hidden-sm"> ToDo & Timeline</span></a></li>
+								<!-- Profile Page - Cooming Soone
+								<li><a class="submenu" href="page-profile.html"><i class="icon-male"></i><span class="hidden-sm"> User Profile</span></a></li>
+								-->
+							</ul>	
+						</li>
+						<li>
+							<a class="dropmenu" href="icons-glyphicons-pro.html#"><i class="icon-edit"></i><span class="hidden-sm"> Forms</span> <span class="label">3</span></a>
+							<ul>
+								<li><a class="submenu" href="form-elements.html"><i class="icon-edit"></i><span class="hidden-sm"> Form elements</span></a></li>
+								<li><a class="submenu" href="form-wizard.html"><i class="icon-edit"></i><span class="hidden-sm"> Wizard</span></a></li>
+								<li><a class="submenu" href="form-dropzone.html"><i class="icon-edit"></i><span class="hidden-sm"> Dropzone Upload</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a class="dropmenu" href="icons-glyphicons-pro.html#"><i class="icon-list-alt"></i><span class="hidden-sm"> Charts</span> <span class="label">3</span></a>
+							<ul>
+								<li><a class="submenu" href="charts-flot.html"><i class="icon-list-alt"></i><span class="hidden-sm"> Flot Charts</span></a></li>
+								<li><a class="submenu" href="charts-xcharts.html"><i class="icon-list-alt"></i><span class="hidden-sm"> xCharts</span></a></li>
+								<li><a class="submenu" href="charts-others.html"><i class="icon-list-alt"></i><span class="hidden-sm"> Other</span></a></li>
+							</ul>
+						
+						</li>
+						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-sm"> Typography</span></a></li>
+						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-sm"> Gallery</span></a></li>
+						<li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-sm"> Tables</span></a></li>
+						<li><a href="calendar.html"><i class="icon-calendar"></i><span class="hidden-sm"> Calendar</span></a></li>
+						<li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-sm"> File Manager</span></a></li>
+						<li>
+							<a class="dropmenu" href="icons-glyphicons-pro.html#"><i class="icon-star"></i><span class="hidden-sm"> Icons</span> <span class="label">3</span></a>
+							<ul>
+								<li><a class="submenu" href="icons-halflings.html"><i class="icon-star"></i><span class="hidden-sm"> Halflings</span></a></li>
+								<li><a class="submenu" href="icons-glyphicons-pro.html"><i class="icon-star"></i><span class="hidden-sm"> Glyphicons PRO</span></a></li>
+								<li><a class="submenu" href="icons-font-awesome.html"><i class="icon-star"></i><span class="hidden-sm"> Font Awesome</span></a></li>
+							</ul>
+						</li>
+						<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-sm"> Login Page</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- end: Main Menu -->
+						
+			<!-- start: Content -->
+			<div id="content" class="col-lg-10 col-sm-11">
+			
+			
+			<div class="row">
+				<div class="box col-sm-12">
+					<div class="box-header">
+						<h2><i class="icon-picture"></i>Glyphicons PRO (SVG, PNG, Font)</h2>
+						<div class="box-icon">
+							<a href="icons-glyphicons-pro.html#" class="btn-setting"><i class="icon-wrench"></i></a>
+							<a href="icons-glyphicons-pro.html#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+							<a href="icons-glyphicons-pro.html#" class="btn-close"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content glyphicons">
+						
+						<p style="width:50%;float:left"><i class="glyphicons-icon glass"></i> glyphicons-icon glass</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon leaf"></i> glyphicons-icon leaf</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon dog"></i> glyphicons-icon dog</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon user"></i> glyphicons-icon user</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon girl"></i> glyphicons-icon girl</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon car"></i> glyphicons-icon car</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon user_add"></i> glyphicons-icon user_add</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon user_remove"></i> glyphicons-icon user_remove</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon film"></i> glyphicons-icon film</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon magic"></i> glyphicons-icon magic</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon envelope"></i> glyphicons-icon envelope</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon camera"></i> glyphicons-icon camera</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon heart"></i> glyphicons-icon heart</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon beach_umbrella"></i> glyphicons-icon beach_umbrella</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon train"></i> glyphicons-icon train</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon print"></i> glyphicons-icon print</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bin"></i> glyphicons-icon bin</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon music"></i> glyphicons-icon music</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon note"></i> glyphicons-icon note</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon heart_empty"></i> glyphicons-icon heart_empty</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon home"></i> glyphicons-icon home</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon snowflake"></i> glyphicons-icon snowflake</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fire"></i> glyphicons-icon fire</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon magnet"></i> glyphicons-icon magnet</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon parents"></i> glyphicons-icon parents</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon binoculars"></i> glyphicons-icon binoculars</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon road"></i> glyphicons-icon road</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon search"></i> glyphicons-icon search</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cars"></i> glyphicons-icon cars</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon notes_2"></i> glyphicons-icon notes_2</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pencil"></i> glyphicons-icon pencil</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bus"></i> glyphicons-icon bus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon wifi_alt"></i> glyphicons-icon wifi_alt</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon luggage"></i> glyphicons-icon luggage</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon old_man"></i> glyphicons-icon old_man</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon woman"></i> glyphicons-icon woman</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon file"></i> glyphicons-icon file</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon coins"></i> glyphicons-icon coins</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon airplane"></i> glyphicons-icon airplane</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon notes"></i> glyphicons-icon notes</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon stats"></i> glyphicons-icon stats</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon charts"></i> glyphicons-icon charts</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pie_chart"></i> glyphicons-icon pie_chart</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon group"></i> glyphicons-icon group</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon keys"></i> glyphicons-icon keys</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon calendar"></i> glyphicons-icon calendar</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon router"></i> glyphicons-icon router</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon camera_small"></i> glyphicons-icon camera_small</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon dislikes"></i> glyphicons-icon dislikes</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon star"></i> glyphicons-icon star</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon link"></i> glyphicons-icon link</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon eye_open"></i> glyphicons-icon eye_open</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon eye_close"></i> glyphicons-icon eye_close</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon alarm"></i> glyphicons-icon alarm</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon clock"></i> glyphicons-icon clock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon stopwatch"></i> glyphicons-icon stopwatch</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon projector"></i> glyphicons-icon projector</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon history"></i> glyphicons-icon history</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon truck"></i> glyphicons-icon truck</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cargo"></i> glyphicons-icon cargo</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon compass"></i> glyphicons-icon compass</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon keynote"></i> glyphicons-icon keynote</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon paperclip"></i> glyphicons-icon paperclip</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon power"></i> glyphicons-icon power</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon lightbulb"></i> glyphicons-icon lightbulb</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tag"></i> glyphicons-icon tag</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tags"></i> glyphicons-icon tags</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cleaning"></i> glyphicons-icon cleaning</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ruller"></i> glyphicons-icon ruller</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon gift"></i> glyphicons-icon gift</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon umbrella"></i> glyphicons-icon umbrella</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon book"></i> glyphicons-icon book</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bookmark"></i> glyphicons-icon bookmark</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon wifi"></i> glyphicons-icon wifi</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cup"></i> glyphicons-icon cup</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon stroller"></i> glyphicons-icon stroller</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon headphones"></i> glyphicons-icon headphones</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon headset"></i> glyphicons-icon headset</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon warning_sign"></i> glyphicons-icon warning_sign</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon signal"></i> glyphicons-icon signal</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon retweet"></i> glyphicons-icon retweet</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon refresh"></i> glyphicons-icon refresh</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon roundabout"></i> glyphicons-icon roundabout</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon random"></i> glyphicons-icon random</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon heat"></i> glyphicons-icon heat</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon repeat"></i> glyphicons-icon repeat</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon display"></i> glyphicons-icon display</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon log_book"></i> glyphicons-icon log_book</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon adress_book"></i> glyphicons-icon adress_book</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon building"></i> glyphicons-icon building</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon eyedropper"></i> glyphicons-icon eyedropper</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon adjust"></i> glyphicons-icon adjust</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tint"></i> glyphicons-icon tint</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon crop"></i> glyphicons-icon crop</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vector_path_square"></i> glyphicons-icon vector_path_square</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vector_path_circle"></i> glyphicons-icon vector_path_circle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vector_path_polygon"></i> glyphicons-icon vector_path_polygon</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vector_path_line"></i> glyphicons-icon vector_path_line</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vector_path_curve"></i> glyphicons-icon vector_path_curve</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vector_path_all"></i> glyphicons-icon vector_path_all</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon font"></i> glyphicons-icon font</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon italic"></i> glyphicons-icon italic</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bold"></i> glyphicons-icon bold</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon text_underline"></i> glyphicons-icon text_underline</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon text_strike"></i> glyphicons-icon text_strike</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon text_height"></i> glyphicons-icon text_height</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon text_width"></i> glyphicons-icon text_width</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon text_resize"></i> glyphicons-icon text_resize</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon left_indent"></i> glyphicons-icon left_indent</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon right_indent"></i> glyphicons-icon right_indent</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon align_left"></i> glyphicons-icon align_left</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon align_center"></i> glyphicons-icon align_center</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon align_right"></i> glyphicons-icon align_right</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon justify"></i> glyphicons-icon justify</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon list"></i> glyphicons-icon list</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon text_smaller"></i> glyphicons-icon text_smaller</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon text_bigger"></i> glyphicons-icon text_bigger</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon embed"></i> glyphicons-icon embed</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon embed_close"></i> glyphicons-icon embed_close</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon table"></i> glyphicons-icon table</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_full"></i> glyphicons-icon message_full</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_empty"></i> glyphicons-icon message_empty</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_in"></i> glyphicons-icon message_in</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_out"></i> glyphicons-icon message_out</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_plus"></i> glyphicons-icon message_plus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_minus"></i> glyphicons-icon message_minus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_ban"></i> glyphicons-icon message_ban</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_flag"></i> glyphicons-icon message_flag</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_lock"></i> glyphicons-icon message_lock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon message_new"></i> glyphicons-icon message_new</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon inbox"></i> glyphicons-icon inbox</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon inbox_plus"></i> glyphicons-icon inbox_plus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon inbox_minus"></i> glyphicons-icon inbox_minus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon inbox_lock"></i> glyphicons-icon inbox_lock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon inbox_in"></i> glyphicons-icon inbox_in</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon inbox_out"></i> glyphicons-icon inbox_out</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cogwheel"></i> glyphicons-icon cogwheel</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cogwheels"></i> glyphicons-icon cogwheels</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon picture"></i> glyphicons-icon picture</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon adjust_alt"></i> glyphicons-icon adjust_alt</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon database_lock"></i> glyphicons-icon database_lock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon database_plus"></i> glyphicons-icon database_plus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon database_minus"></i> glyphicons-icon database_minus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon database_ban"></i> glyphicons-icon database_ban</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon folder_open"></i> glyphicons-icon folder_open</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon folder_plus"></i> glyphicons-icon folder_plus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon folder_minus"></i> glyphicons-icon folder_minus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon folder_lock"></i> glyphicons-icon folder_lock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon folder_flag"></i> glyphicons-icon folder_flag</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon folder_new"></i> glyphicons-icon folder_new</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon edit"></i> glyphicons-icon edit</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon new_window"></i> glyphicons-icon new_window</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon check"></i> glyphicons-icon check</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon unchecked"></i> glyphicons-icon unchecked</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon more_windows"></i> glyphicons-icon more_windows</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon show_big_thumbnails"></i> glyphicons-icon show_big_thumbnails</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon show_thumbnails"></i> glyphicons-icon show_thumbnails</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon show_thumbnails_with_lines"></i> glyphicons-icon show_thumbnails_with_lines</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon show_lines"></i> glyphicons-icon show_lines</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon playlist"></i> glyphicons-icon playlist</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon imac"></i> glyphicons-icon imac</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon macbook"></i> glyphicons-icon macbook</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ipad"></i> glyphicons-icon ipad</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon iphone"></i> glyphicons-icon iphone</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon iphone_transfer"></i> glyphicons-icon iphone_transfer</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon iphone_exchange"></i> glyphicons-icon iphone_exchange</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ipod"></i> glyphicons-icon ipod</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ipod_shuffle"></i> glyphicons-icon ipod_shuffle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ear_plugs"></i> glyphicons-icon ear_plugs</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon phone"></i> glyphicons-icon phone</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon step_backward"></i> glyphicons-icon step_backward</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fast_backward"></i> glyphicons-icon fast_backward</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon rewind"></i> glyphicons-icon rewind</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon play"></i> glyphicons-icon play</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pause"></i> glyphicons-icon pause</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon stop"></i> glyphicons-icon stop</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon forward"></i> glyphicons-icon forward</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fast_forward"></i> glyphicons-icon fast_forward</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon step_forward"></i> glyphicons-icon step_forward</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon eject"></i> glyphicons-icon eject</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon facetime_video"></i> glyphicons-icon facetime_video</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon download_alt"></i> glyphicons-icon download_alt</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon mute"></i> glyphicons-icon mute</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon volume_down"></i> glyphicons-icon volume_down</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon volume_up"></i> glyphicons-icon volume_up</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon screenshot"></i> glyphicons-icon screenshot</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon move"></i> glyphicons-icon move</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon more"></i> glyphicons-icon more</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon brightness_reduce"></i> glyphicons-icon brightness_reduce</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon brightness_increase"></i> glyphicons-icon brightness_increase</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_plus"></i> glyphicons-icon circle_plus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_minus"></i> glyphicons-icon circle_minus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_remove"></i> glyphicons-icon circle_remove</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_ok"></i> glyphicons-icon circle_ok</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_question_mark"></i> glyphicons-icon circle_question_mark</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_info"></i> glyphicons-icon circle_info</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_exclamation_mark"></i> glyphicons-icon circle_exclamation_mark</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon remove"></i> glyphicons-icon remove</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ok"></i> glyphicons-icon ok</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ban"></i> glyphicons-icon ban</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon download"></i> glyphicons-icon download</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon upload"></i> glyphicons-icon upload</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon shopping_cart"></i> glyphicons-icon shopping_cart</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon lock"></i> glyphicons-icon lock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon unlock"></i> glyphicons-icon unlock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon electricity"></i> glyphicons-icon electricity</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ok_2"></i> glyphicons-icon ok_2</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon remove_2"></i> glyphicons-icon remove_2</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cart_out"></i> glyphicons-icon cart_out</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cart_in"></i> glyphicons-icon cart_in</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon left_arrow"></i> glyphicons-icon left_arrow</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon right_arrow"></i> glyphicons-icon right_arrow</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon down_arrow"></i> glyphicons-icon down_arrow</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon up_arrow"></i> glyphicons-icon up_arrow</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon resize_small"></i> glyphicons-icon resize_small</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon resize_full"></i> glyphicons-icon resize_full</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_arrow_left"></i> glyphicons-icon circle_arrow_left</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_arrow_right"></i> glyphicons-icon circle_arrow_right</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_arrow_top"></i> glyphicons-icon circle_arrow_top</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon circle_arrow_down"></i> glyphicons-icon circle_arrow_down</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon play_button"></i> glyphicons-icon play_button</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon unshare"></i> glyphicons-icon unshare</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon share"></i> glyphicons-icon share</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon chevron-right"></i> glyphicons-icon chevron-right</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon chevron-left"></i> glyphicons-icon chevron-left</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bluetooth"></i> glyphicons-icon bluetooth</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon euro"></i> glyphicons-icon euro</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon usd"></i> glyphicons-icon usd</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon gbp"></i> glyphicons-icon gbp</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon retweet_2"></i> glyphicons-icon retweet_2</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon moon"></i> glyphicons-icon moon</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon sun"></i> glyphicons-icon sun</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cloud"></i> glyphicons-icon cloud</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon direction"></i> glyphicons-icon direction</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon brush"></i> glyphicons-icon brush</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pen"></i> glyphicons-icon pen</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon zoom_in"></i> glyphicons-icon zoom_in</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon zoom_out"></i> glyphicons-icon zoom_out</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pin"></i> glyphicons-icon pin</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon albums"></i> glyphicons-icon albums</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon rotation_lock"></i> glyphicons-icon rotation_lock</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon flash"></i> glyphicons-icon flash</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon google_maps"></i> glyphicons-icon google_maps</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon anchor"></i> glyphicons-icon anchor</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon conversation"></i> glyphicons-icon conversation</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon chat"></i> glyphicons-icon chat</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon male"></i> glyphicons-icon male</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon female"></i> glyphicons-icon female</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon asterisk"></i> glyphicons-icon asterisk</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon divide"></i> glyphicons-icon divide</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon snorkel_diving"></i> glyphicons-icon snorkel_diving</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon scuba_diving"></i> glyphicons-icon scuba_diving</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon oxygen_bottle"></i> glyphicons-icon oxygen_bottle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fins"></i> glyphicons-icon fins</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fishes"></i> glyphicons-icon fishes</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon boat"></i> glyphicons-icon boat</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon delete"></i> glyphicons-icon delete</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon sheriffs_star"></i> glyphicons-icon sheriffs_star</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon qrcode"></i> glyphicons-icon qrcode</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon barcode"></i> glyphicons-icon barcode</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pool"></i> glyphicons-icon pool</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon buoy"></i> glyphicons-icon buoy</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon spade"></i> glyphicons-icon spade</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bank"></i> glyphicons-icon bank</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vcard"></i> glyphicons-icon vcard</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon electrical_plug"></i> glyphicons-icon electrical_plug</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon flag"></i> glyphicons-icon flag</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon credit_card"></i> glyphicons-icon credit_card</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon keyboard-wireless"></i> glyphicons-icon keyboard-wireless</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon keyboard-wired"></i> glyphicons-icon keyboard-wired</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon shield"></i> glyphicons-icon shield</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ring"></i> glyphicons-icon ring</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cake"></i> glyphicons-icon cake</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon drink"></i> glyphicons-icon drink</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon beer"></i> glyphicons-icon beer</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fast_food"></i> glyphicons-icon fast_food</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cutlery"></i> glyphicons-icon cutlery</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pizza"></i> glyphicons-icon pizza</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon birthday_cake"></i> glyphicons-icon birthday_cake</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tablet"></i> glyphicons-icon tablet</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon settings"></i> glyphicons-icon settings</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bullets"></i> glyphicons-icon bullets</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cardio"></i> glyphicons-icon cardio</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon t-shirt"></i> glyphicons-icon t-shirt</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pants"></i> glyphicons-icon pants</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon sweater"></i> glyphicons-icon sweater</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fabric"></i> glyphicons-icon fabric</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon leather"></i> glyphicons-icon leather</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon scissors"></i> glyphicons-icon scissors</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bomb"></i> glyphicons-icon bomb</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon skull"></i> glyphicons-icon skull</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon celebration"></i> glyphicons-icon celebration</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tea_kettle"></i> glyphicons-icon tea_kettle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon french_press"></i> glyphicons-icon french_press</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon coffe_cup"></i> glyphicons-icon coffe_cup</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pot"></i> glyphicons-icon pot</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon grater"></i> glyphicons-icon grater</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon kettle"></i> glyphicons-icon kettle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hospital"></i> glyphicons-icon hospital</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hospital_h"></i> glyphicons-icon hospital_h</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon microphone"></i> glyphicons-icon microphone</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon webcam"></i> glyphicons-icon webcam</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon temple_christianity_church"></i> glyphicons-icon temple_christianity_church</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon temple_islam"></i> glyphicons-icon temple_islam</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon temple_hindu"></i> glyphicons-icon temple_hindu</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon temple_buddhist"></i> glyphicons-icon temple_buddhist</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bicycle"></i> glyphicons-icon bicycle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon life_preserver"></i> glyphicons-icon life_preserver</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon share_alt"></i> glyphicons-icon share_alt</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon comments"></i> glyphicons-icon comments</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon flower"></i> glyphicons-icon flower</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon baseball"></i> glyphicons-icon baseball</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon rugby"></i> glyphicons-icon rugby</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon ax"></i> glyphicons-icon ax</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon table_tennis"></i> glyphicons-icon table_tennis</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bowling"></i> glyphicons-icon bowling</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tree_conifer"></i> glyphicons-icon tree_conifer</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tree_deciduous"></i> glyphicons-icon tree_deciduous</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon more_items"></i> glyphicons-icon more_items</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon sort"></i> glyphicons-icon sort</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon filter"></i> glyphicons-icon filter</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon gamepad"></i> glyphicons-icon gamepad</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon playing_dices"></i> glyphicons-icon playing_dices</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon calculator"></i> glyphicons-icon calculator</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tie"></i> glyphicons-icon tie</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon wallet"></i> glyphicons-icon wallet</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon piano"></i> glyphicons-icon piano</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon sampler"></i> glyphicons-icon sampler</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon podium"></i> glyphicons-icon podium</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon soccer_ball"></i> glyphicons-icon soccer_ball</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon blog"></i> glyphicons-icon blog</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon dashboard"></i> glyphicons-icon dashboard</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon certificate"></i> glyphicons-icon certificate</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bell"></i> glyphicons-icon bell</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon candle"></i> glyphicons-icon candle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pushpin"></i> glyphicons-icon pushpin</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon iphone_shake"></i> glyphicons-icon iphone_shake</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pin_flag"></i> glyphicons-icon pin_flag</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon turtle"></i> glyphicons-icon turtle</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon rabbit"></i> glyphicons-icon rabbit</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon globe"></i> glyphicons-icon globe</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon briefcase"></i> glyphicons-icon briefcase</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hdd"></i> glyphicons-icon hdd</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon thumbs_up"></i> glyphicons-icon thumbs_up</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon thumbs_down"></i> glyphicons-icon thumbs_down</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hand_right"></i> glyphicons-icon hand_right</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hand_left"></i> glyphicons-icon hand_left</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hand_up"></i> glyphicons-icon hand_up</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hand_down"></i> glyphicons-icon hand_down</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon fullscreen"></i> glyphicons-icon fullscreen</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon shopping_bag"></i> glyphicons-icon shopping_bag</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon book_open"></i> glyphicons-icon book_open</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon nameplate"></i> glyphicons-icon nameplate</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon nameplate_alt"></i> glyphicons-icon nameplate_alt</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vases"></i> glyphicons-icon vases</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bullhorn"></i> glyphicons-icon bullhorn</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon dumbbell"></i> glyphicons-icon dumbbell</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon suitcase"></i> glyphicons-icon suitcase</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon file_import"></i> glyphicons-icon file_import</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon file_export"></i> glyphicons-icon file_export</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon bug"></i> glyphicons-icon bug</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon crown"></i> glyphicons-icon crown</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon smoking"></i> glyphicons-icon smoking</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cloud-upload"></i> glyphicons-icon cloud-upload</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon cloud-download"></i> glyphicons-icon cloud-download</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon restart"></i> glyphicons-icon restart</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon security_camera"></i> glyphicons-icon security_camera</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon expand"></i> glyphicons-icon expand</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon collapse"></i> glyphicons-icon collapse</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon collapse_top"></i> glyphicons-icon collapse_top</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon globe_af"></i> glyphicons-icon globe_af</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon global"></i> glyphicons-icon global</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon spray"></i> glyphicons-icon spray</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon nails"></i> glyphicons-icon nails</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon claw_hammer"></i> glyphicons-icon claw_hammer</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon classic_hammer"></i> glyphicons-icon classic_hammer</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon hand_saw"></i> glyphicons-icon hand_saw</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon riflescope"></i> glyphicons-icon riflescope</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon electrical_socket_eu"></i> glyphicons-icon electrical_socket_eu</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon electrical_socket_us"></i> glyphicons-icon electrical_socket_us</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pinterest"></i> glyphicons-icon pinterest</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon dropbox"></i> glyphicons-icon dropbox</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon google_plus"></i> glyphicons-icon google_plus</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon jolicloud"></i> glyphicons-icon jolicloud</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon yahoo"></i> glyphicons-icon yahoo</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon blogger"></i> glyphicons-icon blogger</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon picasa"></i> glyphicons-icon picasa</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon amazon"></i> glyphicons-icon amazon</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon tumblr"></i> glyphicons-icon tumblr</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon wordpress"></i> glyphicons-icon wordpress</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon instapaper"></i> glyphicons-icon instapaper</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon evernote"></i> glyphicons-icon evernote</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon xing"></i> glyphicons-icon xing</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon zootool"></i> glyphicons-icon zootool</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon dribbble"></i> glyphicons-icon dribbble</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon deviantart"></i> glyphicons-icon deviantart</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon read_it_later"></i> glyphicons-icon read_it_later</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon linked_in"></i> glyphicons-icon linked_in</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon forrst"></i> glyphicons-icon forrst</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon pinboard"></i> glyphicons-icon pinboard</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon behance"></i> glyphicons-icon behance</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon github"></i> glyphicons-icon github</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon youtube"></i> glyphicons-icon youtube</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon skitch"></i> glyphicons-icon skitch</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon foursquare"></i> glyphicons-icon foursquare</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon quora"></i> glyphicons-icon quora</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon badoo"></i> glyphicons-icon badoo</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon spotify"></i> glyphicons-icon spotify</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon stumbleupon"></i> glyphicons-icon stumbleupon</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon readability"></i> glyphicons-icon readability</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon facebook"></i> glyphicons-icon facebook</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon twitter"></i> glyphicons-icon twitter</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon instagram"></i> glyphicons-icon instagram</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon posterous_spaces"></i> glyphicons-icon posterous_spaces</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon vimeo"></i> glyphicons-icon vimeo</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon flickr"></i> glyphicons-icon flickr</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon last_fm"></i> glyphicons-icon last_fm</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon rss"></i> glyphicons-icon rss</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon skype"></i> glyphicons-icon skype</p>
+						<p style="width:50%;float:left"><i class="glyphicons-icon e-mail"></i> glyphicons-icon e-mail</p>
+	
+					</div>
+				</div><!--/col-->
+			
+			</div><!--/row-->	
+
+    
+					
+			</div>
+			<!-- end: Content -->
+				
+				</div><!--/row-->		
+		
+	</div><!--/container-->
+	
+		
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<p>Here settings can be configured...</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	
+	<div class="clearfix"></div>
+	
+	<footer>
+		<p>
+			<span style="text-align:left;float:left">&copy; 2013 <a href="http://bootstrapmaster.com" alt="Bootstrap Themes">creativeLabs</a></span>
+			<span class="hidden-phone" style="text-align:right;float:right">Powered by: <a href="http://admintemplates.co" alt="Bootstrap Admin Templates">SimpliQ</a></span>
+		</p>
+
+	</footer>
+	
+	<!-- start: JavaScript-->
+	<!--[if !IE]>-->
+
+			<script src="assets/js/jquery-2.0.3.min.js"></script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script src="assets/js/jquery-1.10.2.min.js"></script>
+	
+	<![endif]-->
+
+	<!--[if !IE]>-->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+			</script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script type="text/javascript">
+	 	window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+		</script>
+		
+	<![endif]-->
+	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	
+		
+	
+	
+	<!-- page scripts -->
+	<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="assets/js/modernizr.js"></script>
+	
+	<!-- theme scripts -->
+	<script src="assets/js/custom.min.js"></script>
+	<script src="assets/js/core.min.js"></script>
+		
+	<!-- end: JavaScript-->
+	
+</body>
+</html>

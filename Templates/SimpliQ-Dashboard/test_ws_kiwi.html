@@ -1,0 +1,67 @@
+
+<script src="assets/js/dist/socket.io.min.js"></script>
+ <script src="assets/js/jquery-1.10.2.min.js"></script>
+ <script>
+  var socket = io.connect('http://ws.algorithms.io:8081');
+  socket.on('news', function (data) {
+    console.log(data);
+    //socket.emit('my other event', { my: 'data' });
+  });
+
+  // Sending client data through the websocket
+  $(document).ready(function(){
+      socket.emit('algorithm_random_forest', {	'algorithmPath': '/jobs/swagger/54',
+      								'authToken': '02cfc86d9992e822510318adebccb4d3', 
+      								'method': 'sync',
+      								'outputType': 'json',
+      								'train': '3843',
+      								'test': '{"Accelerometer.X":-5.6,"Accelerometer.Y":-2.5,"Accelerometer.Z":3.7,"Gyroscope.X":-84.2,"Gyroscope.Y":-132.2,"Gyroscope.Z":-80}',
+      								'dependentVariable': 'action'
+      								});
+      	
+      setInterval(function(){								
+      		socket.emit('event_save', {'authToken': '02cfc86d9992e822510318adebccb4d3', 
+      							 'data': '{"Accelerometer.X":-5.6,"Accelerometer.Y":-2.5,"Accelerometer.Z":3.7,"Gyroscope.X":-84.2,"Gyroscope.Y":-132.2,"Gyroscope.Z":-80}',
+      							 'device_id': 'iphone_1',
+      							 'label': ''
+      							});	
+      }, 1000);							
+      socket.emit('query_get_data_by_range', {'data': '123'});	
+      
+
+		socket.emit('statistic_eps_stat_device', {'authToken': '02cfc86d9992e822510318adebccb4d3', 
+													'device_id': 'iphone_1'});
+      	setInterval(function(){	
+      	    socket.emit('statistic_eps_stat_auth_token', {'authToken': '02cfc86d9992e822510318adebccb4d3'});	
+      	}, 500);							
+      //window.setInterval(function(){
+			socket.emit('statistic_get_rolling_avg_and_std', {'data': '123'});
+		//}, 2000);							
+  });
+
+  socket.on('algorithms_io_api', function(data){
+        $('#algorithms_io_result').text('Random Forest Result: ' + data.data);
+      });
+	socket.on('event_save_output', function(data){
+        $('#event_save_output').text('event_save_output: ' + data.data);
+      });
+	socket.on('query_get_data_by_range', function(data){
+        $('#query_get_data_by_range').text('query_get_data_by_range: ' + data.data);
+      });
+	socket.on('statistic_eps_stat_device', function(data){
+        $('#statistic_eps_stat_device').text('statistic_eps_stat_device: ' + data.data);
+      });
+    socket.on('statistic_eps_stat_auth_token', function(data){
+        $('#statistic_eps_stat_auth_token').text('statistic_eps_stat_auth_token: ' + data.data);
+      });
+    socket.on('statistic_get_rolling_avg_and_std', function(data){
+        $('#statistic_get_rolling_avg_and_std').text('statistic_get_rolling_avg_and_std: ' + data.data);
+      });
+</script>
+
+<div id="algorithms_io_result"></div>
+<div id="event_save_output"></div>
+<div id="query_get_data_by_range"></div>
+<div id="statistic_eps_stat_device"></div>
+<div id="statistic_eps_stat_auth_token"></div>
+<div id="statistic_get_rolling_avg_and_std"></div>
