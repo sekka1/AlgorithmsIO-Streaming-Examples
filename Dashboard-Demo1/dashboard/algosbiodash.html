@@ -3,22 +3,128 @@
 <head>
     <script src="assets/js/dist/socket.io.min.js"></script>
     <script>
-        var socket = io.connect('http://ws.algorithms.io:8080');
+
+        var device_id = Math.floor((Math.random()*1000000)+1);
+        console.log('device_id:' + device_id);
+
+        var socket = io.connect('http://ws.algorithms.io');
         socket.emit('statistic_eps_stat_auth_token', {'authToken': '02cfc86d9992e822510318adebccb4d3'});
-        socket.emit('statistic_eps_stat_device', {'authToken': '02cfc86d9992e822510318adebccb4d3', 'device_id': 'live_prediction_iphone_1'});
-        socket.emit('query_get_last_motion_data', {'authToken': '02cfc86d9992e822510318adebccb4d3', 'device_id': 'live_prediction_iphone_1'});
+        socket.emit('statistic_eps_stat_device', {'authToken': '02cfc86d9992e822510318adebccb4d3', 'device_id': device_id});
+        socket.emit('query_get_last_motion_data', {'authToken': '02cfc86d9992e822510318adebccb4d3', 'device_id': device_id});
         // Run Random Forest Motion Prediction
         window.setInterval(function(){
 
-            //$('#prediction1').text('Predicting....');
 
             socket.emit('algorithm_random_forest_rolling_samples', {
                 'authToken': '02cfc86d9992e822510318adebccb4d3',
-                'device_id': 'live_prediction_iphone_1',
+                'device_id': device_id,
                 'train': '3889',
                 'dependentVariable': 'action'
             });
+
         }, 3000);
+
+        var motionArray = [
+            {'accelerometer_x': -0.891819199600001,
+                'accelerometer_y': -6.08289291728,
+                'accelerometer_z': -7.17666972,
+                'gyroscope_x': 11.702,
+                'gyroscope_y': 36.068,
+                'gyroscope_z': -12.146,
+                'rotation_x': 3.73800000000001,
+                'rotation_y': 3.22400000000001,
+                'rotation_z': -1.742,
+                'device_id': device_id,
+                'label': ''},
+            {'accelerometer_x': -0.891819199600001,
+                'accelerometer_y': -6.08289291728,
+                'accelerometer_z': -7.17666972,
+                'gyroscope_x': 11.702,
+                'gyroscope_y': 36.068,
+                'gyroscope_z': -12.146,
+                'rotation_x': 3.73800000000001,
+                'rotation_y': 3.22400000000001,
+                'rotation_z': -1.742,
+                'device_id': device_id,
+                'label': ''},
+            {'accelerometer_x': -0.891819199600001,
+                'accelerometer_y': -6.08289291728,
+                'accelerometer_z': -7.17666972,
+                'gyroscope_x': 11.702,
+                'gyroscope_y': 36.068,
+                'gyroscope_z': -12.146,
+                'rotation_x': 3.73800000000001,
+                'rotation_y': 3.22400000000001,
+                'rotation_z': -1.742,
+                'device_id': device_id,
+                'label': ''},
+            {'accelerometer_x': -0.891819199600001,
+                'accelerometer_y': -6.08289291728,
+                'accelerometer_z': -7.17666972,
+                'gyroscope_x': 11.702,
+                'gyroscope_y': 36.068,
+                'gyroscope_z': -12.146,
+                'rotation_x': 3.73800000000001,
+                'rotation_y': 3.22400000000001,
+                'rotation_z': -1.742,
+                'device_id': device_id,
+                'label': ''},
+            {'accelerometer_x': 0.158056328,
+                'accelerometer_y': 5.46252372,
+                'accelerometer_z': -7.181394232,
+                'gyroscope_x': 30.952,
+                'gyroscope_y': -18.866,
+                'gyroscope_z': -3.556,
+                'rotation_x': -127.176,
+                'rotation_y': 4.01400000000002,
+                'rotation_z': -9.514,
+                'device_id': device_id,
+                'label': ''},
+            {'accelerometer_x': 0.158056328,
+                'accelerometer_y': 5.46252372,
+                'accelerometer_z': -7.181394232,
+                'gyroscope_x': 30.952,
+                'gyroscope_y': -18.866,
+                'gyroscope_z': -3.556,
+                'rotation_x': -127.176,
+                'rotation_y': 4.01400000000002,
+                'rotation_z': -9.514,
+                'device_id': device_id,
+                'label': ''},
+            {'accelerometer_x': 0.158056328,
+                'accelerometer_y': 5.46252372,
+                'accelerometer_z': -7.181394232,
+                'gyroscope_x': 30.952,
+                'gyroscope_y': -18.866,
+                'gyroscope_z': -3.556,
+                'rotation_x': -127.176,
+                'rotation_y': 4.01400000000002,
+                'rotation_z': -9.514,
+                'device_id': device_id,
+                'label': ''}
+                            ];
+
+        // Save event_save_accelerometer_gyroscope and rotation
+        window.setInterval(function(){
+
+            var randMotion = Math.floor((Math.random()*4)+1);
+            //console.log(randMotion);
+
+            socket.emit('event_save_motion', {'authToken': '02cfc86d9992e822510318adebccb4d3',
+                'accelerometer_x': motionArray[randMotion].accelerometer_x,
+                'accelerometer_y': motionArray[randMotion].accelerometer_y,
+                'accelerometer_z': motionArray[randMotion].accelerometer_z,
+                'gyroscope_x': motionArray[randMotion].gyroscope_x,
+                'gyroscope_y': motionArray[randMotion].gyroscope_y,
+                'gyroscope_z': motionArray[randMotion].gyroscope_z,
+                'rotation_x': motionArray[randMotion].rotation_x,
+                'rotation_y': motionArray[randMotion].rotation_y,
+                'rotation_z': motionArray[randMotion].rotation_z,
+                'device_id': device_id,
+                'label': ''
+            });
+        }, 250);
+
 
         socket.on('algorithm_random_forest_rolling_samples_result', function(data){
             $('#predictionsGroup li:last').remove();
@@ -26,7 +132,24 @@
             $('#predictionsGroup').prepend('<li><strong>Action:</strong> <span class="label label-success">'+predictionOutput[0].output+'</span></li>');
         });
 
+
     </script>
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36079188-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
     <!-- start: Meta -->
     <meta charset="utf-8">
     <title>Algorithms BioDash</title>
@@ -72,10 +195,11 @@
     <span class="icon-bar"></span>
 </button>
 <a id="main-menu-toggle" class="hidden-xs open"><i class="icon-reorder"></i></a>
-<a class="navbar-brand col-lg-2 col-sm-1 col-xs-12" href="index.html"><span><img src="http://catalog.algorithms.io/images/logo.png" height="40" width="200"></span></a>
+<a class="navbar-brand col-lg-2 col-sm-1 col-xs-12" href="http://www.algorithms.io"><span><img src="http://catalog.algorithms.io/images/logo.png" height="40" width="200"></span></a>
 <!-- start: Header Menu -->
 <div class="nav-no-collapse header-nav">
 <ul class="nav navbar-nav pull-right">
+<!--
 <li class="dropdown hidden-xs">
     <a class="btn dropdown-toggle" data-toggle="dropdown" href="charts-flot.html#">
         <i class="icon-warning-sign"></i>
@@ -159,7 +283,9 @@
         </li>
     </ul>
 </li>
+-->
 <!-- start: Notifications Dropdown -->
+<!--
 <li class="dropdown hidden-xs">
     <a class="btn dropdown-toggle" data-toggle="dropdown" href="charts-flot.html#">
         <i class="icon-tasks"></i>
@@ -218,8 +344,10 @@
         </li>
     </ul>
 </li>
+-->
 <!-- end: Notifications Dropdown -->
 <!-- start: Message Dropdown -->
+<!--
 <li class="dropdown hidden-xs">
     <a class="btn dropdown-toggle" data-toggle="dropdown" href="charts-flot.html#">
         <i class="icon-envelope"></i>
@@ -313,21 +441,25 @@
         </li>
     </ul>
 </li>
+-->
 <!-- end: Message Dropdown -->
+<!--
 <li>
     <a class="btn" href="charts-flot.html#">
         <i class="icon-wrench"></i>
     </a>
 </li>
+-->
 <!-- start: User Dropdown -->
 <li class="dropdown">
     <a class="btn account dropdown-toggle" data-toggle="dropdown" href="charts-flot.html#">
         <div class="avatar"></div>
         <div class="user">
             <span class="hello">Welcome!</span>
-            <span class="name">Andy</span>
+            <span class="name">Demo Person</span>
         </div>
     </a>
+    <!--
     <ul class="dropdown-menu">
         <li class="dropdown-menu-title">
 
@@ -337,6 +469,7 @@
         <li><a href="charts-flot.html#"><i class="icon-envelope"></i> Messages</a></li>
         <li><a href="login.html"><i class="icon-off"></i> Logout</a></li>
     </ul>
+    -->
 </li>
 <!-- end: User Dropdown -->
 </ul>
@@ -359,9 +492,9 @@
             <div class="nav-collapse sidebar-nav collapse navbar-collapse bs-navbar-collapse">
                 <ul class="nav nav-tabs nav-stacked main-menu">
                     <li class="active" style="padding-top: 10px;"><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-sm">Device Dashboard</span></a></li>
-                    <li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-sm"> My Data</span></a></li>
+                    <!--<li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-sm"> My Data</span></a></li>-->
 
-                    <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-sm"> Login Page</span></a></li>
+                    <!--<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-sm"> Login Page</span></a></li>-->
                 </ul>
             </div>
         </div>
@@ -377,14 +510,17 @@
                     <div class="box-header">
                         <h2><i class="icon-list-alt"></i><span class="break"></span>Motion Data</h2>
                         <div class="box-icon">
-                            <a href="charts-flot.html#" class="btn-setting"><i class="icon-wrench"></i></a>
+                            <a  id="tooltip1" rel='popover' class="btn-setting" data-container="body" data-toggle="popover" data-placement="left" data-content="This chart is showing the live data stream your browser is sending into the Algorithms.io's Websocket interface." data-trigger="focus hover" data-delay="{ show: 500, hide: 100 }"><i class="icon-question"></i></a>
+                            <!--
+                            <a href="charts-flot.html#" class="btn-setting" ><i class="icon-wrench"></i></a>
                             <a href="charts-flot.html#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
                             <a href="charts-flot.html#" class="btn-close"><i class="icon-remove"></i></a>
+                            -->
                         </div>
                     </div>
                     <div class="box-content">
                         <div id="lastMotionData"  class="center" style="height:300px;" ></div>
-                        <p id="hoverdata">Mouse position at (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span></p>
+                        <p id="hoverdata">Position at (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span></p>
                     </div>
                 </div><!--/col-->
 
@@ -395,7 +531,10 @@
                 <div class="col-sm-6">
                     <div class="box">
                         <div class="box-header">
-                            <h2>Realtime EPS For Sensor 1</h2>
+                            <h2>Realtime Events Per Second Streamed For this Demo</h2>
+                            <div class="box-icon">
+                                <a id="tooltip2" rel='popover' class="btn-setting" data-container="body" data-toggle="popover" data-placement="left" data-content="In this demo your browser is the sensor.  This is showing how many events your browser is streaming in per second" data-trigger="focus hover" data-delay="{ show: 500, hide: 100 }"><i class="icon-question"></i></a>
+                            </div>
                         </div>
                         <div class="box-content">
                             <div id="realTimeEPSDevice1" style="height:300px" ></div>
@@ -408,8 +547,7 @@
                         <div class="box-header">
                             <h2><i class="icon-user"></i>Movement Predictions</h2>
                             <div class="box-icon">
-                                <a href="widgets.html#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
-                                <a href="widgets.html#" class="btn-close"><i class="icon-remove"></i></a>
+                                <a id="tooltip3" rel='popover' class="btn-setting" data-container="body" data-toggle="popover" data-placement="left" data-content="Predictions the Algorithms.io platform is making on the data that your browser is generating." data-trigger="focus hover" data-delay="{ show: 500, hide: 100 }"><i class="icon-question"></i></a>
                             </div>
                         </div>
                         <div class="box-content">
@@ -529,11 +667,9 @@
                 <div class="col-sm-12">
                     <div class="box">
                         <div class="box-header">
-                            <h2><i class="icon-list-alt"></i><span class="break"></span>Realtime EPS For All Sensors</h2>
+                            <h2><i class="icon-list-alt"></i><span class="break"></span>Realtime Events Per Second For All Sensors</h2>
                             <div class="box-icon">
-                                <a href="charts-flot.html#" class="btn-setting"><i class="icon-wrench"></i></a>
-                                <a href="charts-flot.html#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
-                                <a href="charts-flot.html#" class="btn-close"><i class="icon-remove"></i></a>
+                                <a id="tooltip4" rel='popover' class="btn-setting" data-container="body" data-toggle="popover" data-placement="left" data-content="Events per second that all demos at this time is generating and sending to the Algorithms.io's platform." data-trigger="focus hover" data-delay="{ show: 500, hide: 100 }"><i class="icon-question"></i></a>
                             </div>
                         </div>
                         <div class="box-content">
@@ -649,23 +785,6 @@
 </div><!--/container-->
 
 
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <p>Here settings can be configured...</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 <div class="clearfix"></div>
 
@@ -729,6 +848,14 @@
 <script src="assets/js/pages/charts-flot.js"></script>
 <script src="assets/js/pages/stickfigure.js"></script>
 <!-- end: JavaScript-->
+
+<script>
+    $('#tooltip1').popover('show');
+    $('#tooltip2').popover('show');
+    $('#tooltip3').popover('show');
+    $('#tooltip4').popover('show');
+
+</script>
 
 </body>
 </html>

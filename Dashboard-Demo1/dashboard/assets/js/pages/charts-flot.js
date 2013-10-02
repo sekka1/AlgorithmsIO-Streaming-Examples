@@ -234,15 +234,15 @@ $(document).ready(function(){
         //	cos.push([i, Math.cos(i)]);
         //}
 
-        var accelerometer_x = getInitTimeChartData(14),
-            accelerometer_y = getInitTimeChartData(14),
-            accelerometer_z = getInitTimeChartData(14),
-            gyroscope_x = getInitTimeChartData(14),
-            gyroscope_y = getInitTimeChartData(14),
-            gyroscope_z = getInitTimeChartData(14),
-            rotation_x = getInitTimeChartData(14),
-            rotation_y = getInitTimeChartData(14),
-            rotation_z = getInitTimeChartData(14);
+        var accelerometer_x = getInitTimeChartData(50),
+            accelerometer_y = getInitTimeChartData(50),
+            accelerometer_z = getInitTimeChartData(50),
+            gyroscope_x = getInitTimeChartData(50),
+            gyroscope_y = getInitTimeChartData(50),
+            gyroscope_z = getInitTimeChartData(50),
+            rotation_x = getInitTimeChartData(50),
+            rotation_y = getInitTimeChartData(50),
+            rotation_z = getInitTimeChartData(50);
 
 
         var plot3 = $.plot($("#lastMotionData"),
