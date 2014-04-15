@@ -21,7 +21,8 @@ Then it sends data,
 
 The data streamed to Algorithms.io will look like these:
 
-||timestamp||latitude||longitude||accuracy||speed||class||
+| timestamp | latitude | longitude | accuracy | speed | class | 
+| :-------- | :------- | :-------- | :------- | :---- | :---- |
 |1387357180.338160|35.511416|139.619904|65|null|rest|
 |1387357180.346586|35.511416|139.619904|65|null|rest|
 |1387357180.902525|35.511463|139.619745|65|null|rest|
