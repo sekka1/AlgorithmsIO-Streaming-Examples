@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Test with Buttons</title>
+    <meta charset="UTF-8">
+    <script src="http://ws.algorithms.io:8080/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script type="text/javascript">
+
+//        socket = io.connect('http://ws.algorithms.io:8080');
+        socket = io.connect('http://192.168.1.42:8080');
+
+        function setText(val, e) {
+            document.getElementById(e).value = val;
+        }
+        function insertText(val, e) {
+            document.getElementById(e).value += val;
+        }
+        var nav = null;
+        var watchID;
+        function listenForPosition() {
+            if (nav == null) {
+                nav = window.navigator;
+            }
+            if (nav != null) {
+                var geoloc = nav.geolocation;
+                if (geoloc != null) {
+                    watchID = geoloc.watchPosition(successCallback, errorCallback);
+                }
+                else {
+                    console.log("Geolocation not supported");
+                }
+            }
+            else {
+                console.log("Navigator not found");
+            }
+        }
+        function clearWatch(watchID) {
+            window.navigator.geolocation.clearWatch(watchID);
+        }
+        function successCallback(position)
+        {
+            socket.emit('event_save', {
+                'authToken': '02cfc86d9992e822510318adebccb4d3',
+                'device_id': 'geolocation1',
+                'label': $('#input_label').val(),
+                'data': {
+                    'latitude': position.coords.latitude,
+                    'longitude': position.coords.longitude,
+                    'accuracy': position.coords.accuracy,
+                    'speed': position.coords.speed
+                }
+            });
+            setText(position.coords.latitude, "latitude");
+            setText(position.coords.longitude, "longitude");
+            setText(position.coords.accuracy, "accuracy");
+            setText(position.coords.speed, "speed");
+        }
+
+        function errorCallback(error) {
+            var message = "";
+            // Check for known errors
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    message = "This website does not have permission to use " +
+                            "the Geolocation API";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    message = "The current position could not be determined.";
+                    break;
+                case error.PERMISSION_DENIED_TIMEOUT:
+                    message = "The current position could not be determined " +
+                            "within the specified timeout period.";
+                    break;
+            }
+            // If it's an unknown error, build a message that includes
+            // information that helps identify the situation so that
+            // the error handler can be updated.
+            if (message == "")
+            {
+                var strErrorCode = error.code.toString();
+                message = "The position could not be determined due to " +
+                        "an unknown error (Code: " + strErrorCode + ").";
+            }
+            console.log(message);
+        }
+
+
+    </script>
+</head>
+<body>
+<h2>Algorithms.io Speed Classification Example</h2>
+This client is used to provide training geolocation data samples to Algorithms.io streaming platform
+<br/>
+<label for="latitude">Latitude: </label><input id="latitude" /> <br />
+<label for="longitude">Longitude: </label><input id="longitude" /> <br />
+<label for="accuracy">Accuracy: </label><input id="accuracy" /> <br/>
+<label for="accuracy">Speed: </label><input id="speed" /> <br/>
+<input type="button" onclick="listenForPosition ()" value="Watch and send geolocation data"  />
+<input type="button" value="Clear watch" onclick="clearWatch()" />
+</body>
+</html>
