@@ -4,24 +4,30 @@ Here's a sample [client](http://ws-clients.algorithms.io/geolocation.html) using
 First it uses socket.io to connect and open socket to Algorithms.io 
 
 	socket = io.connect('http://ws.algorithms.io:8080');
-	
-Then it sends data,
-		   
-	socket.emit('event_save', {
-                'authToken': '02cfc86d9992e822510318adebccb4d3',
-                'device_id': 'geolocation1',
-                'label': $('#input_label').val(),
-                'data': {
-                    'latitude': position.coords.latitude,
-                    'longitude': position.coords.longitude,
-                    'accuracy': position.coords.accuracy,
-                    'speed': position.coords.speed
-                }
-            });
+
+Use this to get geolocation data, which is retrieved by ``window.navigator.geolocation.watchPosition``  
+
+    	socket.emit('event_save', {
+            'authToken': '<auth token>',
+            'device_id': 'geolocation1',
+            'label': $('#input_label').val(),
+            'data': {
+            	'timestamp': position.timestamp;
+               	'latitude': position.coords.latitude,
+          		'longitude': position.coords.longitude,
+         		'accuracy': position.coords.accuracy,
+              	'speed': position.coords.speed
+            }
+        });
+
+* ``label`` is used when the data used to train the machine learning model.  If not available, it can be null if only classification results are needed
+  
+* The ``speed`` attribute denotes the magnitude of the horizontal component of the hosting device's current velocity and is specified in meters per second. If the **implementation** cannot provide speed information, the value of this attribute must be null, The ``speed`` and time duration will then be **calculated** by default geodesic function and used by classifiers as independent variables. Otherwise, it will be used as-in for classifiers
+
 
 The data streamed to Algorithms.io will look like these:
 
-| timestamp | latitude | longitude | accuracy | speed | class | 
+| timestamp | latitude | longitude | accuracy | speed | ``label`` | 
 | :-------- | :------- | :-------- | :------- | :---- | :---- |
 |1387357180.338160|35.511416|139.619904|65|null|rest|
 |1387357180.346586|35.511416|139.619904|65|null|rest|
@@ -29,7 +35,9 @@ The data streamed to Algorithms.io will look like these:
 |1387357182.047721|35.511505|139.620024|65|null|walk|
 |1387357191.938179|35.511496|139.619697|65|null|walk|
 |1387357193.084510|35.511515|139.619998|65|null|run|
-#### Important Notes and Questions
-* The speed attribute denotes the magnitude of the horizontal component of the hosting device's current velocity and is specified in meters per second. If the **implementation** cannot provide speed information, the value of this attribute must be null.* If speed is **not** available, then *geodesic speed* and time duration are calculated and provided to classifiers as independant variables* If speed **is** available, it will be used directly as speed for classifiers
-* Need to implement geodesic function in node.js to calculate speed
-* 
+#### Receiving classifications
+
+	socket.on('random_forest_geolocation_classified_result', function(data)
+	{
+    	$('#motionClassified').text(data.data);
+    });
