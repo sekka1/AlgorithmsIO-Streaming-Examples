@@ -41,7 +41,7 @@
         function successCallback(position)
         {
             socket.emit('event_save', {
-                'authToken': '02cfc86d9992e822510318adebccb4d3',
+                'authToken': 'b6886aca941c817730544b346c0bdd2f',
                 'device_id': 'geolocation1',
                 'label': $('#input_label').val(),
                 'data': {
@@ -85,6 +85,23 @@
             console.log(message);
         }
 
+        window.setInterval(function(){
+            socket.emit('algorithm_random_forest', {
+                'authToken': 'b6886aca941c817730544b346c0bdd2f',
+                'device_id': 'geolocation1',
+                'train': '3913',
+                // TODO: Brandon, please help add a geodesic speed calculation here as test data.
+                // Note that might require the client code to remember previous position
+                'test': '{"V1":1.234}',
+                'dependentVariable': 'V2'
+            });
+
+        }, 3000);
+
+        socket.on('algorithm_random_forest_result', function(data){
+            var predictionOutput = eval(data.data);
+            setText(predictionOutput[0].output[0], "classification");
+        });
 
     </script>
 </head>
@@ -98,5 +115,6 @@ This client is used to provide training geolocation data samples to Algorithms.i
 <label for="accuracy">Speed: </label><input id="speed" /> <br/>
 <input type="button" onclick="listenForPosition ()" value="Watch and send geolocation data"  />
 <input type="button" value="Clear watch" onclick="clearWatch()" />
+<label>Classification result</label><input id="classification" /> <br />
 </body>
 </html>
